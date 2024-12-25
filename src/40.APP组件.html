@@ -9,14 +9,14 @@
 </head>
 
 <body>
-<div id="app">
-</div>
+    <div id="app">
+    </div>
 
-<script>
-    const people =
+    <script>
+        const people =
         {
             template:
-                `<div>
+            `<div>
                 我是人员组件，人员名是：{{name}}
             </div>`,
             data: function ()
@@ -27,14 +27,14 @@
             }
         };
 
-    const school =
+        const school =
         {
             template:
-                    `<div>
-                      <div>我是学校组件，学校名：{{name}}</div>
-                      下边嵌入一个人员组件
-                      <people></people>
-                    </div>`,
+            `<div>
+                <div>我是学校组件，学校名：{{name}}</div>
+                下边嵌入一个人员组件
+                <people></people>
+            </div>`,
             data: function ()
             {
                 return {
@@ -44,41 +44,41 @@
             components: {people}
         };
 
-    const hello =
+        const hello =
         {
             template:
-                    `<div>
-                      我是hello组件
-                      <button @click="showMsg">点我显示一句话</button>
-                    </div>`,
+            `<div>
+                我是hello组件
+                <button @click="showMsg">点我显示一句话</button>
+            </div>`,
             methods:
+            {
+                showMsg: function ()
                 {
-                    showMsg: function ()
-                    {
-                        alert('让你点，你就点.');
-                    }
+                    alert('让你点，你就点.');
                 }
+            }
         };
 
-    const app =
+        const app =
         {
             template:
-                    `<div>
-                      <school></school>
-                      <hello></hello>
-                    </div>`,
+            `<div>
+                <school></school>
+                <hello></hello>
+            </div>`,
             components: {school, hello}
         };
 
-    new Vue
-    (
-        {
-            el: '#app',
-            template: `<app></app>`,
-            components: {app}
-        }
-    );
-</script>
+        const vm = new Vue
+        (
+            {
+                el: '#app',
+                template: `<app></app>`,
+                components: {app}
+            }
+        );
+    </script>
 </body>
 
 </html>
