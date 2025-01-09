@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+
+<body>
+    <div id="app">
+        {{_data}}
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        const vm = new Vue
+        (
+            {
+                el: '#app',
+                data:
+                {
+                    name: '张三',
+                    address:
+                    {
+                        cityName: '北京',
+                        home:
+                        {
+                            area: '100',
+                            floor: 3
+                        }
+                    },
+                    teacher:
+                    [
+                        {
+                            name: '孙老师',
+                            age: 23
+                        },
+                        {
+                            name: '王老师',
+                            age: 18
+                        }
+                    ],
+                    hobby:['吃饭', '睡觉']
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>

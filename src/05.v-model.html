@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="theName" v-model="theVal" value="100"/>
+
+        <hr/>
+        {{_data}}
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue
+        (
+            {
+                el: '#app',
+                data:
+                {
+                    theVal: '初始始数据'
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>

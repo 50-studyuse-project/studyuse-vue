@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" ref="myInput" v-show="show"/>
+
+        <br><br>
+        <button @click="showMyinput">显示输入框并获取焦点</button>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue
+        (
+            {
+                el: '#app',
+                data:
+                {
+                    show: false
+                },
+                methods:
+                {
+                    showMyinput: function ()
+                    {
+                        // 显示输入框
+                        this.show = true;
+
+                        // 输入框获得焦点
+                        this.$nextTick
+                        (
+                            function ()
+                            {
+                                this.$refs.myInput.focus();
+                            }
+                        );
+                    }
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>
